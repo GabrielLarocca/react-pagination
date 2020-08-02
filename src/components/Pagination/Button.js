@@ -1,33 +1,29 @@
+import React, { useState } from "react";
+import "../style.css";
 
-import React, {useState} from 'react'
-import '../style.css'
+export default function Button(props) {
 
-export default function Button (props){
+  const styles = { 
+      colorButton: props.colorButton ? props.colorButton : "",
+      color: props.colorTextButton ? props.colorTextButton : "",
+  };
+  const onChange = () => {
+    const pages = props.totalItemsCount / props.itemsCountPerPage;
+    const indexOfLastTodo = props.activePage * props.itemsCountPerPage;
+    const indexOfFirstTodo = indexOfLastTodo - props.itemsCountPerPage;
+    props.onChange(indexOfFirstTodo, indexOfLastTodo, pages);
+  };
 
-    const [contador, setcontador] = useState()
-
-const styles = {
-        colorButton: props.colorButton ? props.colorButton  : "",
-        color: props.colorTextButton ? props.colorTextButton : ""
-}
-{console.log(props.colorButton)}
-
-function subtracao(total, perpage){
-    const conta = total - perpage
-}
-
-return(
-    <button 
-    className="stylebutton"
-    style={{
+  return (
+    <button
+      className="stylebutton"
+      style={{
         backgroundColor: styles.colorButton,
-        color: styles.color
-    }} 
-    onClick={subtracao(props.totalItemsCount, props.itemsCountPerPage)}
+        color: styles.color,
+      }}
+      onClick={onChange}
     >
-        <p>carregar mais {contador} produtos</p>
+      <p>carregar mais produtos</p>
     </button>
-)
-
+  );
 }
-

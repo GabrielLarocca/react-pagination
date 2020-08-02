@@ -19,16 +19,17 @@ export default function App() {
   const totalItemsCount = array.length;
   const itemsCountPerPage = 5;
   const [activePage, setactivePage] = useState(1)
-  const [limit, setlimit] = useState(5)
+  const [limit, setlimit] = useState({ inicio: 0, fim: 0 })
 
   return (
     <div className="App">
-      {array.slice(0, limit).map((el, i) => {
+      {array.slice(limit.inicio, limit.fim).map((el, i) => {
         return <p>{el.nome}</p>;
       })}
       <Button
-        onChange={(e) => {
-          console.log("e",e)
+        onChange={(a, b, c) => {
+          console.log(a,b,c)
+          setlimit({ inicio: a, fim: b })
         }}
         activePage={activePage}
         itemsCountPerPage={itemsCountPerPage}
