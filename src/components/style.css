@@ -3,4 +3,25 @@
     border-radius: 40px;
     color: whitesmoke;
     font-weight: bolder;
+    box-shadow:0 2px 0 black;
+    font-family: arial;
+    font-size:10px;
+    text-transform: uppercase;
+    font-weight:700;
+    border:none;
+    padding:10px;
+    cursor: pointer;
+    display:inline-block;
+    text-decoration: none;
+}
+
+.stylebutton:focus {
+    outline: none;
+    border:none;
+}
+
+.stylebutton:active{
+    position:relative;
+    top:5px;
+    box-shadow:none;
 }
