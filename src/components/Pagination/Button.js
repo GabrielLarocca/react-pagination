@@ -28,6 +28,7 @@ export default function Button(props) {
       </div>
       <button
         className="stylebutton"
+        disabled={indexOfFirstTodo === props.totalItemsCount}
         style={{
           backgroundColor: styles.colorButton,
           color: styles.color,
