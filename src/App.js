@@ -27,10 +27,9 @@ export default function App() {
         itemsCountPerPage={itemsCountPerPage}
         totalItemsCount={totalItemsCount}
         colorButton={"#000"}
+        colotTextButton={'#fff'}
         colorProgressBar={"#8B0000"}
-      >
-        Default
-      </Button>
+        />
     </div>
   );
 }
