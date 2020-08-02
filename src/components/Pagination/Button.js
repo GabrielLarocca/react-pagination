@@ -6,6 +6,7 @@ export default function Button(props) {
   const pages = props.totalItemsCount / props.itemsCountPerPage;
   const indexOfLastTodo = props.activePage * props.itemsCountPerPage;
   const indexOfFirstTodo = indexOfLastTodo - props.itemsCountPerPage;
+  const porcentagem = (indexOfFirstTodo / props.totalItemsCount) * 100;
 
   const styles = {
     colorButton: props.colorButton ? props.colorButton : "",
@@ -22,7 +23,7 @@ export default function Button(props) {
       <div className="progress progress-moved">
         <div
           className="progress-bar"
-          style={{ backgroundColor: styles.colorProgressBar, width: '50%'}}
+          style={{ backgroundColor: styles.colorProgressBar, width: `${porcentagem}%`}}
         ></div>
       </div>
       <button
