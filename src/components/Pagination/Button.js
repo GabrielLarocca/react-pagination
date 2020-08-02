@@ -18,7 +18,7 @@ export default function Button(props) {
   return (
         <div className="container">    
             <div className="progress progress-moved">
-                <div className="progress-bar"  style={{backgroundColor: styles.colorProgressBar}}>
+                <div className="progress-bar" style={{backgroundColor: styles.colorProgressBar}}>
                 </div>                       
             </div> 
         <button
@@ -32,6 +32,5 @@ export default function Button(props) {
         <p>carregar mais {props.itemsCountPerPage} produtos</p>
         </button>
         </div>
-
   );
 }
