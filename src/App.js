@@ -14,6 +14,16 @@ export default function App() {
     { nome: "Andre" },
     { nome: "Camila" },
     { nome: "Sabrina" },
+    { nome: "XXXX" },
+    { nome: "yyyyy" },
+    { nome: "AAAAA" },
+    { nome: "222" },
+    { nome: "555" },
+    { nome: "333" },
+    { nome: "11111" },
+    { nome: "2222" },
+    { nome: "KKKK" },
+    { nome: "ZZZZ" },
   ];
 
   const totalItemsCount = array.length;
@@ -22,14 +32,15 @@ export default function App() {
   const [limit, setlimit] = useState({ inicio: 0, fim: 0 })
 
   return (
-    <div className="App">
+    <div className="App container">
       {array.slice(limit.inicio, limit.fim).map((el, i) => {
         return <p>{el.nome}</p>;
       })}
       <Button
         onChange={(a, b, c) => {
-          console.log(a,b,c)
+          setactivePage(c)
           setlimit({ inicio: a, fim: b })
+          console.log(a,b,c)
         }}
         activePage={activePage}
         itemsCountPerPage={itemsCountPerPage}
@@ -37,7 +48,9 @@ export default function App() {
         colorButton={"#000"}
         colorTextButton={"#fff"}
         colorProgressBar={"#8B0000"}
+        ShowChangeState={false}
       />
+      
     </div>
   );
 }
