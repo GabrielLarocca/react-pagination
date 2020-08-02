@@ -1,11 +1,13 @@
 
-import styled from 'styled-components'
+import React from 'react'
+import '../style.css'
 
 
-const Button = styled.button`
-    border: none;
-    cursor: pointer;
-    background: #0099FF;
-`
+export default function Button (classname){
 
-export default Button
+return(
+    <button className={classname ?  'stylebutton' : 'stylebutton'}><p>Carregar Mais total - mostrados produtos</p></button>
+
+
+)
+}
