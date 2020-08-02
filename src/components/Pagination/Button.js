@@ -2,10 +2,18 @@
 import React from 'react'
 import '../style.css'
 
-export default function Button (classname){
+export default function Button (props){
+
+const styles = {
+        colorButton: props.colorButton ? `'${props.colorButton}'`  : "#fff"
+}
+{console.log(props.colorButton)}
+
+
 
 return(
-    <button className={classname ?  'stylebutton' : 'stylebutton'}><p>Carregar Mais total - mostrados produtos</p></button>
-
+    <button className={{backgroundColor: styles.colorButton}}><p>Carregar Mais {props.totalItemsCount - props.itemsCountPerPage} produtos</p></button>
 )
+
 }
+
